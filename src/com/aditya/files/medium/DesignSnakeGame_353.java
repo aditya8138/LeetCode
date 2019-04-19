@@ -1,5 +1,6 @@
 package com.aditya.files.medium;
 
+import java.io.PipedOutputStream;
 import java.util.LinkedList;
 
 public class DesignSnakeGame_353 {
@@ -8,13 +9,14 @@ public class DesignSnakeGame_353 {
         int x;
         int y;
 
-        public Position(){
-            this.x=0;
-            this.y=0;
-        }
+
         public Position(int x, int y){
             this.x=x;
             this.y=y;
+        }
+
+        public boolean isEqual(Position p){
+            return this.x==p.x && this.y == p.y ;
         }
     }
 
@@ -30,13 +32,13 @@ public class DesignSnakeGame_353 {
      E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */
     public DesignSnakeGame_353(int width, int height, int[][] food) {
 
-        snake= new LinkedList<Position>();
-        snake.add(new Position(0,0));
         this.food=food;
         this.width=width;
         this.height=height;
-        int len=0;
+        snake= new LinkedList<Position>();
+        snake.add(new Position(0,0));
 
+        len=0;
     }
 
     /** Moves the snake.
@@ -61,10 +63,24 @@ public class DesignSnakeGame_353 {
                 break;
         }
 
+        //check if snake is out of bounds:
+        if(current.x>=width || current.x<0 || current.y>=height || current.y<0){
+            return -1;
+        }
+
         //check if snake collides with itself:
         for(int i=1;i<snake.size();i++){
-
+            Position next = snake.get(i);
+            if(next.equals(current))    return -1;
         }
+        snake.addFirst(current);
+        if(len<food.length){
+            Position p = new Position(food[len][0],food[len][1]);
+            if(current.isEqual(p)){
+                len++;
+            }
+        }
+        while(snake.size()>len+1) snake.removeLast();
 
         return len;
     }
