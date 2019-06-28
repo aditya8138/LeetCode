@@ -1,20 +1,13 @@
 package com.aditya.files;
 
-import com.aditya.files.easy.ReverseLinkedList;
-import com.aditya.files.medium.GenerateParanthesis;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.aditya.files.medium.LongestPalindromicSubstring_5;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-//        ReverseLinkedList.ListNode list= new reverseLinkedList.ListNode(2);
-
-
-//        ReverseLinkedList.ListNode res = reverseLinkedList.reverseList(list);
+        LongestPalindromicSubstring_5 substring5 = new LongestPalindromicSubstring_5();
+        System.out.println(substring5.longestPalindrome("babab"));
 
     }
 }
