@@ -1,6 +1,6 @@
 package medium;
 
-public class SearchInRotatedSortedArray {
+public class SearchInRotatedSortedArray_33 {
     public static int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
