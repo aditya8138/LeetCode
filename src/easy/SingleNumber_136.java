@@ -41,6 +41,15 @@ public class SingleNumber_136 {
 
 
     // without extra memory:
-
+   /* public int singleNumber(int[] nums) {
+        if(nums==null || nums.length==0){
+            return 0;
+        }
+        int a=0;
+        for(int i:nums){
+            a^=i;
+        }
+        return a;
+    }*/
 
 }
