@@ -16,10 +16,31 @@ Given an array of size n, find the majority element. The majority element is the
         Output: 2
 */
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MajorityElement_169 {
+
+    public static int majorityElement(int[] nums) {
+
+        /********** O(1) space ********/
+
+
+        int count = 0;
+        Integer candidate = null;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        return candidate;
+    }
+
+
+    /*
+
+    O(n) time & space
+
     public static int majorityElement(int[] nums) {
         if (nums == null) {
             return -1;
@@ -41,4 +62,5 @@ public class MajorityElement_169 {
         }
         return 0;
     }
+    */
 }
