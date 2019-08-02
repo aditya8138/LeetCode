@@ -11,7 +11,7 @@ Output: 5->4->3->2->1->NULL
 */
 
 
-class Solution {
+class ReverseLinkedList_206 {
     public static ListNode reverseList(ListNode head) {
         ListNode curr = head;
         ListNode prev = null;
