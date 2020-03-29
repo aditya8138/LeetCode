@@ -24,7 +24,7 @@ public class TimeBasedKeyValueStore_981 {
     }
 
     public String get(String key, int timestamp) {
-        Map<Integer, String> treeMap = new TreeMap<>(new Comparator<>() {
+        Map<Integer, String> treeMap = new TreeMap<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return o2.compareTo(o1);//sort in descending order
