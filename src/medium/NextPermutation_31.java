@@ -16,7 +16,7 @@ public class NextPermutation_31 {
         }
     }
 
-    public void nextPermutation(int[] nums) {
+    public static void nextPermutation(int[] nums) {
         if (nums == null || nums.length == 0) {
             return;
         }
@@ -35,5 +35,10 @@ public class NextPermutation_31 {
             swap(nums, i, j);
         }
         reverse(nums, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 2, 1, 3};
+        nextPermutation(nums);
     }
 }
